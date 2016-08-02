@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11849,23 +11849,25 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># TODO: Minimum price of the data</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
 <span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="k">print</span> <span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -11892,7 +11894,7 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -13242,7 +13244,7 @@ F8gwMzMzMzNrAg+2zMzMzMzMmsCDLTMzMzMzsybwYMvMzMzMzKwJPNgyMzMzMzNrgv8HBjRy69Dr
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Graph where max_depth = 3, As more training points are added to the training curve the score seems to be converging on the value of 0.8. Similarly as more testing points are added to the testing curve the score seems to be converging on the value of 0.8. More data is always better and looking at thses graphs as a group there is a trend that could be more apparent with the inclusion of more or diferent training points. As the max_depth value increases the training and testing score curves seem to take longer to converge.</p>
+<p><strong>Answer: </strong> Graph where max_depth = 3, As more training points are added to the training curve the score seems to be converging on the value of 0.8. Similarly as more testing points are added to the testing curve the score seems to be converging on the value of 0.8. As the number of training points increases the testing score levels out which implies diminishing returns on increasing the number of training points.</p>
 
 </div>
 </div>
@@ -13731,17 +13733,7 @@ PmOMMQHFEp8xxpiAYonPGGNMQLHEZ4wxJqD8f4PTpoLeJSyOAAAAAElFTkSuQmCC
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> When the model is trained with a maximum depth of 1 it appears to suffer from high variance which is exhibited through high uncertainty on the validation curve compared to the training curve. Variance is sensitive to limited training data when the maximum depth is 1. When the model is trained with a maximum depth of 10 there is a high bias due to the large offset (difference) between the expected prediction of the model and the correct value which we are trying to predict.</p>
-
-</div>
-</div>
-</div>
+</div>**Answer: ** When the model is trained with a maximum depth of 1 it appears to suffer from high bias where it is underfit due to the model being too simple and unable to represent the complexity. When the model is trained with a maximum depth of 10 it appears to suffer from high variance where it is overfit because the decision tree is too large. At the maximum depth of 1 both the training and testing scores are low and at the maximum depth of 10 the training score is high while the testing score is low.
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -13788,7 +13780,7 @@ PmOMMQHFEp8xxpiAYonPGGNMQLHEZ4wxJqD8f4PTpoLeJSyOAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Grid search is a way of automatically testing multiple combinations of parameter tunes while cross-validating for best performance.</p>
+<p><strong>Answer: </strong> Grid search is a way of automatically testing multiple combinations of parameter tunes while cross-validating for best performance. The grid search trains and evaluates the model on each grid, then systematically searches the best performing grid.</p>
 
 </div>
 </div>
@@ -13809,7 +13801,7 @@ PmOMMQHFEp8xxpiAYonPGGNMQLHEZ4wxJqD8f4PTpoLeJSyOAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> k-fold cross validation takes a large amount of data and splits it into 'k' equal buckets. It then chooses 1 bucket to use for training data and the rest for testing. It changes which bucket of data it uses for training until all have be used and takes the average of the test results. k-fold cross-validation although requires more compute time provides much more accurate test results which makes a grid search more efficient when optimizing a model.</p>
+<p><strong>Answer: </strong> k-fold cross validation takes a large amount of data and splits it into 'k' equal buckets. It then chooses 1 bucket to use for testing data and the rest for training. After you run 'k' testing sets, you average the results from those 'k' experiments. k-fold cross-validation although requires more compute time provides much more accurate test results which makes a grid search more efficient when optimizing a model.</p>
 
 </div>
 </div>
@@ -14033,7 +14025,7 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 <p>Predicted selling price for Client 1's home: $391,183.33
 Predicted selling price for Client 2's home: $189,123.53
 Predicted selling price for Client 3's home: $942,666.67</p>
-<p>Yes, each client's house selling price seems reasonable given the value of the respective features. Client 1's house has a selling price near the mean price given its subset of features. Client 2's house has a selling price near the minimum price given its subset of features. Lastly, Client 3's house has a selling price near the maximum price given its subset of features.</p>
+<p>Yes, each client's house selling price seems reasonable given the value of the respective features. Client 1's house has a selling price near the mean price given its subset of features; 5 rooms, median poverty percent and median student-teacher ration.  Client 2's house has a selling price near the minimum price given its subset of features; 4 rooms, high poverty percent and high student-teacher ratio. Lastly, Client 3's house has a selling price near the maximum price given its subset of features; 8 rooms, low poverty percent and low student-teacher ratio.</p>
 
 </div>
 </div>
